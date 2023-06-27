@@ -1,4 +1,4 @@
-@tailwind base;
+/*@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -24,4 +24,31 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+*/
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  color: var(--black);
+  background: #F5F6F8;
+  
+  font-family: 'Noto Sans', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --black: #3B434E;
+  --grey-light: #EBEBEB;
+  --white: white;
+  --primary: #7653FC;
+  --primary-hover: #6044cd;
+  --red: #FC836D;
+  --green: #1DC37E;
+  --green-ligth: #C8F8E4;
+  --font-family: 'Noto Sans', sans-serif;
 }
