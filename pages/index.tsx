@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import { Button, Htag, P, Tag, Rating } from '../components'
 import { useState } from 'react'
-import { Layout } from '../layout/Layout'
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -12,7 +12,7 @@ const [rating, setRating] = useState<number>(4);
 
 
   return (
-    <Layout>
+    <>
 
       <Htag tag="h1">Text</Htag>
       <Htag tag="h2">Text</Htag>
@@ -40,6 +40,6 @@ const [rating, setRating] = useState<number>(4);
       <Rating rating={3} isEditable={false} />
 
       
-    </Layout>
+    </>
   )
 }
