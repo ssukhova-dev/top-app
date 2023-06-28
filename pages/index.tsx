@@ -2,11 +2,12 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import { Button, Htag, P, Tag, Rating } from '../components'
 import { useState } from 'react'
+import { withLayout } from '@/layout/Layout'
 
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home(): JSX.Element  {
+function Home(): JSX.Element  {
 
 const [rating, setRating] = useState<number>(4);
 
@@ -43,3 +44,5 @@ const [rating, setRating] = useState<number>(4);
     </>
   )
 }
+
+export default withLayout(Home);
