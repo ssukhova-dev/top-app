@@ -4,7 +4,6 @@ import { Button, Htag, P, Tag, Rating } from '../components'
 import { useState } from 'react'
 import { withLayout } from '../layout/Layout'
 
-import Logo from '../public/vercel.svg'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -16,10 +15,6 @@ const [rating, setRating] = useState<number>(4);
 
   return (
     <>
-
-
-<Logo/>
-
 
       <Htag tag="h1">Text</Htag>
       <Htag tag="h2">Text</Htag>
