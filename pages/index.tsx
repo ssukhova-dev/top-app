@@ -3,14 +3,16 @@ import { Inter } from 'next/font/google'
 import { Button, Htag, P, Tag, Rating } from '../components'
 import { useState } from 'react'
 import { withLayout } from '../layout/Layout'
-
+import { GetStaticProps } from 'next'
+import axios from 'axios'
+import { MenuItem } from '@/interfaces/menuInterface'
 
 
 const inter = Inter({ subsets: ['latin'] })
 
-function Home(): JSX.Element  {
+function Home({ menu }: HomeProps): JSX.Element {
 
-const [rating, setRating] = useState<number>(4);
+  const [rating, setRating] = useState<number>(4);
 
 
   return (
@@ -38,12 +40,33 @@ const [rating, setRating] = useState<number>(4);
       <Tag size="s" color="primary">Text</Tag>
       <Tag size="m" >Text</Tag>
 
-      <Rating rating={rating} isEditable={true} setRating={setRating}/>
+      <Rating rating={rating} isEditable={true} setRating={setRating} />
       <Rating rating={3} isEditable={false} />
 
-      
+<ul>
+        {menu.map(m => (<li key={m._id.secondCategory}>{m._id.secondCategory}</li>))}
+</ul>
+
     </>
   )
 }
 
 export default withLayout(Home);
+
+export const getStaticProps: GetStaticProps<HomeProps> = async () => {
+  const firstCategory = 0;
+  const { data: menu } = await axios.post<MenuItem[]>(process.env.NEXT_PUBLIC_DOMAIN + '/api/top-page/find', {
+    firstCategory
+  });
+  return {
+    props: {
+      menu,
+      firstCategory
+    }
+  }
+};
+
+interface HomeProps extends Record<string, unknown> {
+  menu: MenuItem[];
+  firstCategory: number;
+}
