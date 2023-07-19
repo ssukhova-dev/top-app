@@ -30,15 +30,13 @@ export const Menu = (): JSX.Element => {
 			<>
 				{firstLevelMenu.map(m => (
 					<div key={m.route}>
-						<Link href={`/${m.route}`} legacyBehavior>
-							<a >
+						<Link href={`/${m.route}`} >			
 								<div className={cn(styles.firstLevel, {
 									[styles.firstLevelActive]: m.id == firstCategory
 								})}>
 									{m.icon}
 									<span >{m.name}</span>
 								</div>
-							</a>
 						</Link>
 
 						{m.id == firstCategory && buildSecondLevel(m)}
@@ -73,12 +71,11 @@ export const Menu = (): JSX.Element => {
 	const buildThirdLevel = (pages: PageItem[], route: string) => {
 		return (
 			pages.map(p => (
-				<Link legacyBehavior key={`/${route}/${p.alias}`} href={`/${route}/${p.alias}`}>
-					<a className={cn(styles.thirdLevel, {
+				<Link key={`/${route}/${p.alias}`} href={`/${route}/${p.alias}`}
+					className={cn(styles.thirdLevel, {
 						[styles.thirdLevelActive]: `/${route}/${p.alias}` === router.asPath
-					})}>
-						{p.category}
-					</a>
+					})}>			
+						{p.category}				
 				</Link>
 			))
 		);
