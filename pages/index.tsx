@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import { Button, Htag, P, Tag, Rating } from '../components'
+import { Button, Htag, P, Tag, Rating, Textarea, Input } from '../components'
 import { useState } from 'react'
 import { withLayout } from '../layout/Layout'
 import { GetStaticProps } from 'next'
@@ -42,6 +42,9 @@ function Home({ menu }: HomeProps): JSX.Element {
 
       <Rating rating={rating} isEditable={true} setRating={setRating} />
       <Rating rating={3} isEditable={false} />
+
+      <Input placeholder='test'></Input>
+      <Textarea placeholder='test Textarea'></Textarea>
 
       <ul>
         {menu.map(m => (<li key={m._id.secondCategory}>{m._id.secondCategory}</li>))}
