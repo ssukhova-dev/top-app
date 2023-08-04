@@ -10,6 +10,7 @@ import { Divider } from "../Divider/Divider";
 import Image from "next/image";
 import { useState } from "react";
 import { Review } from "../Review/Review";
+import { ReviewForm } from "../ReviewForm/ReviewForm";
 
 
 export const Product = ({ product, className, ...props }: ProductProps): JSX.Element => {
@@ -77,8 +78,12 @@ export const Product = ({ product, className, ...props }: ProductProps): JSX.Ele
 				[styles.closed]: !isReviewOpened,
 			})}>
 				{product.reviews.map(review => (
-					<Review key={review._id} review={review} />
+					<>
+						<Review key={review._id} review={review} />
+						<Divider />
+					</>
 				))}
+				<ReviewForm productId={product._id}/>
 			</Card>
 		</>
 	);
