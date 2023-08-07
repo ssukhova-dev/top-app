@@ -42,3 +42,5 @@ Next.js
 Server Side Rendering (SSR)
 Pages Router
 адаптивная верска. css grid
+svg
+react-hook-form
