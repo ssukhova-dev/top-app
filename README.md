@@ -44,3 +44,4 @@ Pages Router
 адаптивная верска. css grid
 svg
 react-hook-form
+анимация на Framer Motion
