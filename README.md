@@ -22,26 +22,19 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+## Описание проекта 
 
-To learn more about Next.js, take a look at the following resources:
+Сайт, посвященный рейтингам курсов, книг, сервисов. 
+Можно почитать отзывы, и добавить свой отзыв и выставить рейтинг.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Технологический стек
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-
-
-Next.js
-Server Side Rendering (SSR)
-Pages Router
-адаптивная верска. css grid
-svg
-react-hook-form
-анимация на Framer Motion
+* Next.js
+* React
+* Server Side Rendering (SSR)
+* TypeScript
+* Pages Router
+* адаптивная верска. css grid
+* svg
+* react-hook-form
+* анимация на Framer Motion
