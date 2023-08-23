@@ -50,13 +50,13 @@ a {
   --black: #3B434E;
   --grey: #A4A4A4;
   --grey-light: #EBEBEB;
-  --grey-dark: #787D85;
+  --grey-dark: #6c7077;
   --white: white;
-  --primary: #7653FC;
+  --primary: #7351f5;
   --primary-hover: #6044cd;
   --red: #FC836D;
   --red-light: #efb6ac;
-  --green: #1DC37E;
-  --green-ligth: #C8F8E4;
+  --green: #007b48;
+  --green-light: #C8F8E4;
   --font-family: 'Noto Sans', sans-serif;
 }
