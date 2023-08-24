@@ -15,7 +15,7 @@ import { motion } from "framer-motion"
 
 export const Product = motion(forwardRef(({ product, className, ...props }: ProductProps, ref: ForwardedRef<HTMLDivElement>): JSX.Element => {
 
-	const [isReviewOpened, setIsReviewOpened] = useState<Boolean>(false);
+	const [isReviewOpened, setIsReviewOpened] = useState<boolean>(false);
 	const reviewRef = useRef<HTMLDivElement>(null);
 
 	const variants = {
@@ -26,6 +26,7 @@ export const Product = motion(forwardRef(({ product, className, ...props }: Prod
 	const scrollToReview = () => {
 		setIsReviewOpened(true);
 		reviewRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+		reviewRef.current?.focus();
 	}
 
 	return (
@@ -85,14 +86,14 @@ export const Product = motion(forwardRef(({ product, className, ...props }: Prod
 				</div>
 			</Card>
 			<motion.div animate={isReviewOpened ? 'visible' : 'hidden'} variants={variants} initial='hidden'>
-				<Card color='blue' className={styles.reviews} ref={reviewRef}>
+				<Card color='blue' className={styles.reviews} ref={reviewRef} tabIndex={isReviewOpened ? 0 : -1}>
 					{product.reviews.map(review => (
 						<div key={review._id}>
 							<Review review={review} />
 							<Divider />
 						</div>
 					))}
-					<ReviewForm productId={product._id} />
+					<ReviewForm productId={product._id} isOpened={isReviewOpened}/>
 				</Card>
 			</motion.div>
 		</div>
