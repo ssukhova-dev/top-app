@@ -28,7 +28,7 @@ export const Menu = (): JSX.Element => {
 		hidden: { marginBottom: 0 }
 	};
 
-	const vatiantsChldren = {
+	const variantsChldren = {
 		visible: {
 			opacity: 1,
 			height: 40,
@@ -96,7 +96,7 @@ export const Menu = (): JSX.Element => {
 							</button>
 							<motion.ul
 								layout
-								variants={vatiants}
+								variants={variants}
 								initial={m.isOpened ? 'visible' : 'hidden'}
 								animate={m.isOpened ? 'visible' : 'hidden'}
 								className={styles.secondLevelBlock}
@@ -113,7 +113,7 @@ export const Menu = (): JSX.Element => {
 	const buildThirdLevel = (pages: PageItem[], route: string, isOpened: boolean) => {
 		return (
 			pages.map(p => (
-				<motion.li key={`/${route}/${p.alias}`} variants={vatiantsChldren}>
+				<motion.li key={`/${route}/${p.alias}`} variants={variantsChldren}>
 					<Link href={`/${route}/${p.alias}`}
 						tabIndex={isOpened ? 0 : -1}
 						className={cn(styles.thirdLevel, {
