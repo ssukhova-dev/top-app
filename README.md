@@ -38,3 +38,4 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 * svg
 * react-hook-form
 * анимация на Framer Motion
+* доступность, ARIA атрибуты, навигация для screen reader'а
