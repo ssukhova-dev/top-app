@@ -5,7 +5,7 @@ import { Header } from "./Header/Header";
 import { Sidebar } from "./Sidebar/Sidebar";
 import { Footer } from "./Footer/Footer";
 import { FunctionComponent, useRef, useState, KeyboardEvent } from "react";
-import { AppContextProvider } from "../context/app.context";
+import { AppContextProvider, IAppContext } from "../context/app.context";
 import { Up } from "@/components";
 
 
@@ -42,7 +42,7 @@ export const Layout = ({ children }: LayoutProps): JSX.Element => {
 	);
 }
 
-export const withLayout = <T extends Record<string, unknown>>(Component: FunctionComponent<T>) => {
+export const withLayout = <T extends Record<string, unknown> & IAppContext>(Component: FunctionComponent<T>) => {
 	return function withLayoutComponent(props: T): JSX.Element {
 
 		return (
